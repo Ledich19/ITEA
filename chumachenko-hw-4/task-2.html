@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task-2</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        background: url("./img/image.jpg") no-repeat;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 10px;
+        flex-direction: column;
+        flex: 1 1 auto;
+      }
+      h2 {
+        margin: 0;
+      }
+      .dots {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: 20px;
+      }
+      .dot {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.505);
+      }
+
+      .grey {
+        color: white;
+        margin-right: 20px;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.505);
+        width: 40%;
+      }
+      .get-info {
+        cursor: pointer;
+        font-weight: bold;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        margin-top: 20px;
+        color: white;
+        background: rgb(127, 183, 42);
+      }
+      .description {
+        line-height: 1.5rem;
+      }
+      .arrows {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+      .left,
+      .right {
+        font-weight: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 3rem;
+        background: rgba(0, 0, 0, 0.505);
+        height: 50px;
+        width: 50px;
+      }
+      .left {
+      }
+      .right {
+        margin-left: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h2 class="grey">Donec hendrerit</h2>
+      <div class="grey">Suspendisse commodo nisi et</div>
+      <div class="grey">
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam
+          aspernatur deleniti molestiae illo dolorem necessitatibus laborum
+          repellendus error voluptas cupiditate. Fuga aspernatur hic ratione
+          aliquid ad quaerat error modi ipsa.
+        </div>
+        <button class="get-info">GET MORE INFO</button>
+      </div>
+    </main>
+    <footer>
+      <ul class="dots">
+        <li class="dot"></li>
+        <li class="dot"></li>
+        <li class="dot"></li>
+        <li class="dot"></li>
+        <li class="dot"></li>
+      </ul>
+      <div class="arrows">
+        <div class="left"><</div>
+        <div class="right">></div>
+      </div>
+    </footer>
+  </body>
+</html>

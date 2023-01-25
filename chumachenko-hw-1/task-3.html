@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>task-3</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    div {
+      max-width: 768px;
+      margin: 0 auto;
+      padding: 0 100px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-weight: 500;
+      font-size: 25px;
+      text-align: center;
+      font-weight: 600;
+      margin: 25px 0;
+    }
+
+    h2 {
+      font-weight: 500;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    ol {
+      list-style: none;
+      counter-reset: li;
+    }
+
+    li {
+      margin-top: 15px;
+    }
+
+    li:before {
+      counter-increment: li;
+      content: counters(li, ".") ". ";
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Язык разметки HTML</h1>
+    <h2>Содержание</h2>
+    <ol>
+      <li><a href="#"> Общее представление</a></li>
+      <li><a href="#"> Браузеры</a></li>
+      <li><a href="#"> Версии</a></li>
+      <li><a href="#"> Перспективы</a></li>
+      <li><a href="#"> Структура HTML-документа</a>
+        <ol>
+          <li><a href="#"> Варианты DOCTYPE для HTML 4.01</a></li>
+          <li><a href="#"> Варианты DOCTYPE для HTML 5</a></li>
+        </ol>
+      </li>
+      <li><a href="#"> Браузерные войны</a></li>
+      <li><a href="#"> Примечания</a></li>
+      <li><a href="#"> См. также</a></li>
+      <li><a href="#"> Ссылки</a></li>
+      <li><a href="#"> Литература</a></li>
+    </ol>
+  </div>
+</body>
+
+</html>

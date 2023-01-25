@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task-4</title>
+    <style>
+      body {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        background-image: url(./img/JFK_limousine.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        cursor: none;
+      }
+      div {
+        height: 100vh;
+        width: 100%;
+      }
+      img {
+        position: absolute;
+        height: 300px;
+        border: solid calc(100vw * 1.5) black;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+    <script>
+      const shot = new Audio(
+        "./audio/odinochnyiy-vyistrel-vintovki-ar-15-nato-36126.mp3"
+      );
+      const gate = new Audio("./audio/zatvor-vintovki-36121.mp3");
+      let flag = true;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const followCursor = () => {
+          const el = document.querySelector(".follow-cursor");
+          window.addEventListener("mousemove", (e) => {
+            const target = e.target;
+            if (!target) return;
+            el.style.left = e.pageX + "px";
+            el.style.top = e.pageY + "px";
+          });
+        };
+        followCursor();
+      });
+      document.addEventListener("click", () => {
+        if (flag) {
+          flag = false;
+          shot.play()
+          shot.onended = () => {
+            gate.play()
+            gate.onended = () => {
+              flag = true
+            };
+          };
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <img class="follow-cursor" src="./img/aim.png" alt="" />
+    </div>
+  </body>
+</html>

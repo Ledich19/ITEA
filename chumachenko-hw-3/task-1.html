@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task-1</title>
+    <style>
+      body {
+        font-family: "Times New Roman", Times, serif;
+        margin: 0;
+        font-size: 17px;
+        height: 100vh;
+        background: linear-gradient(
+          145deg,
+          rgb(122, 0, 0) 0%,
+          rgba(255, 127, 0, 1) 18%,
+          rgba(255, 255, 0, 1) 34%,
+          rgba(0, 255, 63, 1) 50%,
+          rgba(0, 250, 255, 1) 66%,
+          rgba(0, 0, 255, 1) 82%,
+          rgba(255, 0, 255, 1) 100%
+        );
+        backdrop-filter: blur(10%);
+      }
+      div {
+        background:rgba(0, 0, 0, 0.849);
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+
+      }
+      .color1{
+        background: rgba(255, 0, 0, 0.2);
+      }
+      .color2{
+        background: rgba(255, 127, 0, 0.2);
+      }
+      .color3{
+        background: rgba(255, 255, 0, 0.2);
+      }
+      .color4{
+        background: rgba(0, 255, 63, 0.2);
+      }
+      .color5{
+        background: rgba(0, 250, 255, 0.2);
+      }
+      .color6{
+        background: rgba(0, 0, 255, 0.2);
+      }
+      .color7{
+        background: rgba(255, 0, 255, 0.2);
+      }
+      .color1:hover{
+        background: rgba(255, 0, 0, 0.6);
+      }
+      .color2:hover{
+        background: rgba(255, 127, 0, 0.6);
+      }
+      .color3:hover{
+        background: rgba(255, 255, 0, 0.6);
+      }
+      .color4:hover{
+        background: rgba(0, 255, 63, 0.6);
+      }
+      .color5:hover{
+        background: rgba(0, 250, 255, 0.6);
+      }
+      .color6:hover{
+        background: rgba(0, 0, 255, 0.6);
+      }
+      .color7:hover{
+        background: rgba(255, 0, 255, 0.6);
+      }
+      table {
+        width: 600px;
+        height: 400px;
+        margin: 0 auto;
+        background-image: url("./img/5a564db45d2e9.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+      }
+      table,
+      th,
+      td {
+        border: 5px solid rgb(1, 127, 11);
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <table>
+        <tr>
+          <td rowspan="2" style="width: 30%;">&nbsp;</td>
+          <td colspan="2" rowspan="2">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr >
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+        </tr>
+        <tr style="height: 70%;">
+          <td >&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td >&nbsp;</td>
+        </tr>
+        <tr>
+          <td >&nbsp;</td>
+          <td rowspan="2" colspan="2">&nbsp;</td>
+          <td rowspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td >&nbsp;</td>
+        </tr>
+        </tr>
+      </table>
+    </div>
+    <script>
+      const audio1 = new Audio('./audio/dolgoe-zvuchanie-volshebnyih-kolokolchikov.mp3') 
+      const audio2 = new Audio('./audio/glissando-iz-kolokolchikov-vniz.mp3') 
+      const audio3 = new Audio('./audio/igra-neskolkimi-kolokolchikami.mp3') 
+      const audio4 = new Audio('./audio/imitatsiya-vzmaha-volshebnoy-palochki.mp3') 
+      const audio5 = new Audio('./audio/kolokolchiki-peredayut-zvuk-volshebnogo-prevrascheniya.mp3') 
+      const audio6 = new Audio('./audio/korotkiy-zvon-hrustalnogo-kolokolchika.mp3') 
+      const audio7 = new Audio('./audio/korotkiy-zvon.mp3') 
+      const audio8 = new Audio('./audio/perezvon-hrustalnyih-kolokolchikov.mp3') 
+      const audio9 = new Audio('./audio/stalnoy-kolokolchik-36963.mp3') 
+      const audio10 = new Audio('./audio/visyaschie-kolokolchiki-kolyihayutsya-na-vetru.mp3') 
+      const audio11 = new Audio('./audio/vozdushnyiy-zvon-malenkih-kolokolchikov.mp3') 
+      const audio12 = new Audio('./audio/zvuk-chastits-kolokolchika-zvukovoy-effekt-material-42601.mp3') 
+      const audio13 = new Audio('./audio/zvuk-tibetskogo-kolokolchika-ozadachen-fantaziey-42590.mp3') 
+      const audio14 = new Audio('./audio/zvuk-vetrennyih-kolokolchikov.mp3') 
+      const audio15 = new Audio('./audio/zvuk-volshebstva-kolokolchikami.mp3') 
+      const audioArray = [audio1,audio2,audio3,audio4,audio5,audio6,audio7,audio8,audio9,audio10,audio11,audio12,audio13,audio14,audio15]
+      const table = document.querySelector('table')
+      const td = document.querySelectorAll('td')
+
+      function randomInteger(min, max) {
+        let rand = min + Math.random() * (max + 1 - min);
+        return Math.floor(rand);
+      }
+      
+      td.forEach(element => {
+        element.classList.add(`color${randomInteger(1, 7)}`)
+      });
+      table.addEventListener('mouseover', (e) => {
+        const random = randomInteger(0, 7)
+        audioArray[random].play()
+      })
+    </script>
+  </body>
+</html>

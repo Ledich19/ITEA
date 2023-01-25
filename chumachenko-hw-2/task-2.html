@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task-2</title>
+    <style>
+      body {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: auto;
+      }
+      div {
+        height: 100vh;
+        width: 50%;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="./img/image-map.jpg" usemap="#image-map" alt="figures"/>
+
+      <map name="image-map">
+        <area
+          target=""
+          alt="rectangle"
+          title="rectangle"
+          href="https://en.wikipedia.org/wiki/Rectangle"
+          coords="1037,920,1039,674,1438,545,1672,630,1667,865,1284,1041"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="sphere"
+          title="sphere"
+          href="https://en.wikipedia.org/wiki/Sphere"
+          coords="430,966,196"
+          shape="circle"
+        />
+        <area
+          target=""
+          alt="pyramid"
+          title="pyramid"
+          href="https://en.wikipedia.org/wiki/Pyramid_(geometry)"
+          coords="494,772,728,267,1033,793,744,963,625,924,581,829"
+          shape="poly"
+        />
+      </map>
+    </div>
+    <script>
+      const areas = document.querySelectorAll("area");
+      const img = document.querySelector("img");
+      let imgWith = 1828;
+
+      const changeCoords = () => {
+        const width = img.offsetWidth;
+        for (const area of areas) {
+          const coords = area.coords.split(",").map((point) => {
+            return point / (imgWith / width);
+          });
+          area.setAttribute("coords", coords.join(","));
+        }
+        imgWith = width;
+      };
+      changeCoords();
+
+      window.addEventListener("resize", (e) => {
+        changeCoords();
+      });
+    </script>
+  </body>
+</html>
